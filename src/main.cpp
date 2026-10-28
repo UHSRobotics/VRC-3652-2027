@@ -96,6 +96,14 @@ void autonomous() {
  * task, not resume it from where it left off.
  */
 
+ void elevator_up(){
+	cascade_motor.move(127);
+}
+
+void elevator_down(){
+	cascade_motor.move(-127);
+}
+
 void opcontrol() {
 	pros::lcd::initialize();
 	// loop forever
@@ -109,8 +117,17 @@ void opcontrol() {
 		// pros::lcd::print(3, "LR: %f", verticalRotation.get_position());
 		// pros::lcd::print(4, "RR: %f", horizontalRotation.get_position());
 		// delay to save resources
+		if (master.get_digital(DIGITAL_R1)) {
+			elevator_up()
+		} 
+		else if (master.get_digital(DIGITAL_R2)) {
+			elevator_down()
+		} 
+		else {
+			cascade_motor.move(0); 
+		}
+	
 		pros::delay(20);
-
 		// Run driver control based on mode selected
 		drive.run(drive.CURVATURE_DRIVE);
 
