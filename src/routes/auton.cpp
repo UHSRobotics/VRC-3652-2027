@@ -9,8 +9,40 @@ std::string Autonomous::autonName = "Solo - AWP";
 Intake intakemotors;
 
 void auton_l(){
-    chassis.setPose(0, 0, 0);
-    chassis.moveToPoint(0, 10, 10000);
+    chassis.setPose(-51.22, 11.63, 61);
+    descore.set_value(true);
+    pros::delay(100);
+    descore.set_value(false);
+    intakemotors.moveForward(127);
+    intakemotors.trapdoor_pos(0);
+    // go to blocks in middle
+    chassis.moveToPoint(-24, 24, 1050, {.maxSpeed = 80});
+    pros::delay(600);
+    match_loader.set_value(true);
+    // go to in between long goal and loader
+    // also note the y value in the below two lines are absurdly large but it works somehow
+    //chassis.turnToPoint(-40, -49, 400);
+    chassis.moveToPoint(-40, 46.7, 650, {.maxSpeed = 120});
+    // face loader and go to it        
+    //chassis.turnToHeading(270, 500, {}, false);
+    chassis.moveToPoint(-52, 46.5, 200, {.maxSpeed = 120, .earlyExitRange = 2.0});
+    chassis.moveToPoint(-65, 46, 1350,{.maxSpeed = 70},false);
+    match_loader.set_value(true);
+    // score in long goal
+    intakemotors.moveForward(127);
+    intakemotors.trapdoor_pos(0);
+    chassis.moveToPoint(-23, 46.5, 3000, {.forwards=false, .minSpeed = 80});
+    pros::delay(400);
+    intakemotors.trapdoor_pos(2);
+    match_loader.set_value(false);
+    // funny alignment for setting up wing push
+    chassis.turnToHeading(330, 500);
+    chassis.moveToPoint(-40, 59, 700, {.maxSpeed = 120});
+    chassis.turnToHeading(270, 500); 
+    // push le blocks in
+    while(true){
+        chassis.moveToPoint(-14, 60, 1500, {.forwards = false, .maxSpeed = 80});
+    }
 }
 
 void auton_r(){

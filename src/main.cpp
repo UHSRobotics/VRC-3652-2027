@@ -114,6 +114,13 @@ void opcontrol() {
 		// Run driver control based on mode selected
 		drive.run(drive.CURVATURE_DRIVE);
 
+		match_ldr.run(DIGITAL_A);
+
+		wing_descore.run(DIGITAL_L2);
+		
+		// armM.controlByAmount(DIGITAL_B, customArmMove, armVelocity);
+
+		intake.holdControl(DIGITAL_R1, DIGITAL_R2, DIGITAL_X, DIGITAL_L1);
 
 		// Run color sorter
 		// colorSorter.setTargetColor(DONUT_COLOR::BLUE_RING);

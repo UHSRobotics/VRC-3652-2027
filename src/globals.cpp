@@ -9,20 +9,19 @@ bool loader_state = false;
 bool descore_state = false;
 
 // CHASSIS
-// pros::Motor leftFrontMotor(LEFT_FRONT_MOTOR_PORT, BLUE);
+pros::Motor leftFrontMotor(LEFT_FRONT_MOTOR_PORT, BLUE);
 // pros::Motor leftMiddleMotor(LEFT_MIDDLE_MOTOR_PORT, BLUE);
-// pros::Motor leftBackMotor(LEFT_BACK_MOTOR_PORT, BLUE);
-// pros::Motor rightFrontMotor(RIGHT_FRONT_MOTOR_PORT, BLUE);
+pros::Motor leftBackMotor(LEFT_BACK_MOTOR_PORT, BLUE);
+pros::Motor rightFrontMotor(RIGHT_FRONT_MOTOR_PORT, BLUE);
 // pros::Motor rightMiddleMotor(RIGHT_MIDDLE_MOTOR_PORT, BLUE);
-// pros::Motor rightBackMotor(RIGHT_BACK_MOTOR_PORT, BLUE);
+pros::Motor rightBackMotor(RIGHT_BACK_MOTOR_PORT, BLUE);
 
+// !TODO MOTOR GROUP GOES HERE
 // pros::Motor_Group leftMotors({leftFrontMotor, leftMiddleMotor, leftBackMotor});
 // pros::Motor_Group rightMotors({rightFrontMotor, rightMiddleMotor, rightBackMotor});
-pros::Motor leftMotor(LEFT_MOTOR_PORT, BLUE);
-pros::Motor rightMotor(RIGHT_MOTOR_PORT, BLUE);
 
-pros::Motor_Group leftMotors({leftMotor});
-pros::Motor_Group rightMotors({rightMotor});
+pros::Motor_Group leftMotors({leftFrontMotor, leftBackMotor});
+pros::Motor_Group rightMotors({rightFrontMotor, rightBackMotor});
 
 // SUBSYSTEMS
 pros::Motor leftIntakeMotor(INTAKE_MOTOR1_PORT, BLUE);
