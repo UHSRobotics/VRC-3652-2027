@@ -8,7 +8,7 @@
 #include "../include/robot/wing.hpp"
 #include "../include/robot/intake.hpp"
 #include "../include/robot/colorSorter.hpp"
-
+#include "../include/robot/elevator.hpp"
 // Robot Instances
 AutonSelector autonSelector(5);
 Autonomous auton;
@@ -16,6 +16,7 @@ Drivetrain drive;
 Match_load match_ldr;
 Wing wing_descore;
 Intake intake;
+Elevator m_elevator;
 //ColorSorter colorSorter(intake);
 
 /**
@@ -96,6 +97,14 @@ void autonomous() {
  * task, not resume it from where it left off.
  */
 
+ void elevator_up(){
+	cascade_motor.move(127);
+}
+
+void elevator_down(){
+	cascade_motor.move(-127);
+}
+
 void opcontrol() {
 	pros::lcd::initialize();
 	// loop forever
@@ -109,6 +118,7 @@ void opcontrol() {
 		// pros::lcd::print(3, "LR: %f", verticalRotation.get_position());
 		// pros::lcd::print(4, "RR: %f", horizontalRotation.get_position());
 		// delay to save resources
+		m_elevator.elevator_movement(controller.get_digital(DIGITAL_UP));
 		pros::delay(20);
 
 		// Run driver control based on mode selected

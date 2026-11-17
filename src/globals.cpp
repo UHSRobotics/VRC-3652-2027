@@ -22,7 +22,14 @@ pros::Motor rightBackMotor(RIGHT_BACK_MOTOR_PORT, BLUE);
 
 pros::Motor_Group leftMotors({leftFrontMotor, leftBackMotor});
 pros::Motor_Group rightMotors({rightFrontMotor, rightBackMotor});
-
+// pros::Motor leftMotor(LEFT_MOTOR_PORT, BLUE);
+// pros::Motor rightMotor(RIGHT_MOTOR_PORT, BLUE);
+// pros::Motor cascade_motor(CASCADE_MOTOR, BLUE);
+// pros::Motor_Group leftMotors({leftMotor});
+// pros::Motor_Group rightMotors({rightMotor});
+pros::Motor elevator_down(ELEVATOR_DOWN, BLUE);
+pros::Motor elevator_up(ELEVATOR_UP, BLUE);
+pros::Motor_Group elevator({elevator_down, elevator_up});
 // SUBSYSTEMS
 pros::Motor leftIntakeMotor(INTAKE_MOTOR1_PORT, BLUE);
 pros::Motor rightIntakeMotor(INTAKE_MOTOR2_PORT, BLUE);

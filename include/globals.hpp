@@ -12,7 +12,8 @@
 #define COAST pros::E_MOTOR_BRAKE_COAST
 #define BRAKE pros::E_MOTOR_BRAKE_BRAKE
 #define HOLD pros::E_MOTOR_BRAKE_HOLD
-
+#define ELEVATOR_DOWN 0
+#define ELEVATOR_UP 0
 // WHEEL SIZES
 #define SIZE_2 2
 #define SIZE_275 2.75
@@ -22,7 +23,7 @@
 // CHASSIS PORTS
 #define LEFT_FRONT_MOTOR_PORT 8
 // #define LEFT_MIDDLE_MOTOR_PORT -9
-#define LEFT_BACK_MOTOR_PORT -7
+#define LEFT_BACK_MOTOR_PORT 7
 #define RIGHT_FRONT_MOTOR_PORT -1
 // #define RIGHT_MIDDLE_MOTOR_PORT 2
 #define RIGHT_BACK_MOTOR_PORT 3
@@ -85,7 +86,11 @@ extern pros::Motor leftBackMotor;
 extern pros::Motor rightFrontMotor;
 // extern pros::Motor rightMiddleMotor;
 extern pros::Motor rightBackMotor;
-
+// extern pros::Motor leftMotor;
+// extern pros::Motor rightMotor;
+extern pros::Motor elevator_down;
+extern pros::Motor elevator_up;
+extern pros::Motor_Group elevator;
 extern pros::Motor_Group leftMotors;
 extern pros::Motor_Group rightMotors;
 
