@@ -93,6 +93,8 @@ extern pros::Motor rightBackMotor;
 extern pros::Motor_Group leftMotors;
 extern pros::Motor_Group rightMotors;
 
+extern pros::Motor_Group elevatorMotors;
+
 // SUBSYSTEMS DEVICES
 extern pros::Motor leftIntakeMotor;
 extern pros::Motor rightIntakeMotor;

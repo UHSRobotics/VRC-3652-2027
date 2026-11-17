@@ -8,6 +8,7 @@
 #include "../include/robot/wing.hpp"
 #include "../include/robot/intake.hpp"
 #include "../include/robot/colorSorter.hpp"
+#include "../include/elevator.hpp"
 
 // Robot Instances
 AutonSelector autonSelector(5);
@@ -128,5 +129,7 @@ void opcontrol() {
 
 		// delay to save resources
 		pros::delay(25);
+
+		handleElevator();
 	}
 }
