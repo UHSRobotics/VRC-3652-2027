@@ -97,14 +97,6 @@ void autonomous() {
  * task, not resume it from where it left off.
  */
 
- void elevator_up(){
-	cascade_motor.move(127);
-}
-
-void elevator_down(){
-	cascade_motor.move(-127);
-}
-
 void opcontrol() {
 	pros::lcd::initialize();
 	// loop forever
@@ -130,7 +122,7 @@ void opcontrol() {
 		
 		// armM.controlByAmount(DIGITAL_B, customArmMove, armVelocity);
 
-		intake.holdControl(DIGITAL_R1, DIGITAL_R2, DIGITAL_X, DIGITAL_L1);
+		intake.holdControl(DIGITAL_R1, DIGITAL_R2);
 
 		// Run color sorter
 		// colorSorter.setTargetColor(DONUT_COLOR::BLUE_RING);
