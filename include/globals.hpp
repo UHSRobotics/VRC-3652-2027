@@ -12,8 +12,8 @@
 #define COAST pros::E_MOTOR_BRAKE_COAST
 #define BRAKE pros::E_MOTOR_BRAKE_BRAKE
 #define HOLD pros::E_MOTOR_BRAKE_HOLD
-#define ELEVATOR_DOWN 0
-#define ELEVATOR_UP 0
+#define ELEVATOR_RIGHT 0
+#define ELEVATOR_LEFT 0
 // WHEEL SIZES
 #define SIZE_2 2
 #define SIZE_275 2.75
@@ -38,7 +38,7 @@
 
 // SUBSYSTEMS
 #define INTAKE_MOTOR1_PORT 11
-#define INTAKE_MOTOR2_PORT -12
+
 extern bool isIntakeActive;
 
 // SENSORS
@@ -88,15 +88,14 @@ extern pros::Motor rightFrontMotor;
 extern pros::Motor rightBackMotor;
 // extern pros::Motor leftMotor;
 // extern pros::Motor rightMotor;
-extern pros::Motor elevator_down;
-extern pros::Motor elevator_up;
+extern pros::Motor elevator_right;
+extern pros::Motor elevator_left;
 extern pros::Motor_Group elevator;
 extern pros::Motor_Group leftMotors;
 extern pros::Motor_Group rightMotors;
 
 // SUBSYSTEMS DEVICES
-extern pros::Motor leftIntakeMotor;
-extern pros::Motor rightIntakeMotor;
+extern pros::Motor intakeMotor;
 
 extern pros::Motor_Group intakeMotors;
 
