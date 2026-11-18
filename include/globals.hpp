@@ -21,12 +21,22 @@
 #define SIZE_4 4
 
 // CHASSIS PORTS
+<<<<<<< Updated upstream
 #define LEFT_FRONT_MOTOR_PORT 8
 // #define LEFT_MIDDLE_MOTOR_PORT -9
 #define LEFT_BACK_MOTOR_PORT 7
 #define RIGHT_FRONT_MOTOR_PORT -1
 // #define RIGHT_MIDDLE_MOTOR_PORT 2
 #define RIGHT_BACK_MOTOR_PORT 3
+=======
+ #define LEFT_FRONT_MOTOR_PORT 8
+// #define LEFT_MIDDLE_MOTOR_PORT -9
+ #define LEFT_BACK_MOTOR_PORT -7
+ #define RIGHT_FRONT_MOTOR_PORT -1
+// #define RIGHT_MIDDLE_MOTOR_PORT 2
+ #define RIGHT_BACK_MOTOR_PORT 3
+
+>>>>>>> Stashed changes
 
 // CHASSIS VALUES
 #define RPM 450
@@ -80,6 +90,7 @@ extern bool descore_state;
 
 
 // CHASSIS DEVICES
+<<<<<<< Updated upstream
 extern pros::Motor leftFrontMotor;
 // extern pros::Motor leftMiddleMotor;
 extern pros::Motor leftBackMotor;
@@ -91,6 +102,16 @@ extern pros::Motor rightBackMotor;
 extern pros::Motor elevator_down;
 extern pros::Motor elevator_up;
 extern pros::Motor_Group elevator;
+=======
+ extern pros::Motor leftFrontMotor;
+// extern pros::Motor leftMiddleMotor;
+ extern pros::Motor leftBackMotor;
+ extern pros::Motor rightFrontMotor;
+// extern pros::Motor rightMiddleMotor;
+ extern pros::Motor rightBackMotor;
+
+
+>>>>>>> Stashed changes
 extern pros::Motor_Group leftMotors;
 extern pros::Motor_Group rightMotors;
 

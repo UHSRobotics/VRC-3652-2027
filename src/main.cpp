@@ -31,6 +31,19 @@ void initialize() {
 	leftMotors.set_brake_modes(BRAKE);
 	rightMotors.set_brake_modes(BRAKE);
 }
+void opcontrol() {
+    while (true) {
+        
+        if (std::abs(joystick_power) > 10) { // Deadband check
+            elevator.move(joystick_power); 
+        } 
+        
+        else if (master.get_digital(DIGITAL_Y)) {
+            elevator.move_absolute(1000, 100); 
+        }
+	}
+}
+pros::controller master (pros::E_CONTROLLER_MASTER);
 
 /**
  * Runs while the robot is in the disabled state of Field Management System or
@@ -139,4 +152,7 @@ void opcontrol() {
 		// delay to save resources
 		pros::delay(25);
 	}
+	master.get_digital_new_press(DIGITAL_??); → bool
+	leftmotor.move(int voltage (1000));
+	rightmotor.move(int voltage (1000));
 }
