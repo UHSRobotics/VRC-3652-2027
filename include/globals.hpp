@@ -12,6 +12,7 @@
 #define COAST pros::E_MOTOR_BRAKE_COAST
 #define BRAKE pros::E_MOTOR_BRAKE_BRAKE
 #define HOLD pros::E_MOTOR_BRAKE_HOLD
+//TODO: SET TO PORT!!!!
 #define ELEVATOR_RIGHT 0
 #define ELEVATOR_LEFT 0
 // WHEEL SIZES
@@ -37,7 +38,8 @@
 // #define HORIZONTAL_DISPLACEMENT 0.00
 
 // SUBSYSTEMS
-#define INTAKE_MOTOR1_PORT 11
+//TODO: SET PORT!!!!
+#define INTAKE_MOTOR1_PORT 0
 
 extern bool isIntakeActive;
 
@@ -96,9 +98,6 @@ extern pros::Motor_Group rightMotors;
 
 // SUBSYSTEMS DEVICES
 extern pros::Motor intakeMotor;
-
-extern pros::Motor_Group intakeMotors;
-
 // SENSOR DEVICES
 // extern pros::Optical optical;
 extern pros::Imu inertial;

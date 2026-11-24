@@ -6,15 +6,15 @@ Intake::Intake() {
 }
 
 void Intake::moveForward(int velocity) {
-    intakeMotors.move(velocity);
+    intakeMotor.move(velocity);
 }
 
 void Intake::moveBackward(int velocity) {
-    intakeMotors.move(-velocity);
+    intakeMotor.move(-velocity);
 }
 
 void Intake::stop() {
-    intakeMotors.move(0);
+    intakeMotor.move(0);
 }
 
 bool Intake::isActive() const {
@@ -31,10 +31,7 @@ void Intake::deactivate() {
     stop();
 }
 
-void Intake::holdControl(
-    pros::controller_digital_e_t intakeButton,
-    pros::controller_digital_e_t outtakeButton
-) {
+void Intake::holdControl(pros::controller_digital_e_t intakeButton, pros::controller_digital_e_t outtakeButton) {
     if (controller.get_digital(intakeButton)) 
     {
         activate();
