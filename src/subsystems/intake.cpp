@@ -31,12 +31,14 @@ void Intake::deactivate() {
     stop();
 }
 
-void Intake::holdControl(pros::controller_digital_e_t intakeButton, pros::controller_digital_e_t outtakeButton) {
-    if (controller.get_digital(intakeButton)) 
+void Intake::holdControl(
+    bool in, 
+    bool out) {
+    if (in) 
     {
         activate();
     }
-    else if (controller.get_digital(outtakeButton)) 
+    else if (out) 
     {
         isIntakeActive = true;
         moveBackward(127);

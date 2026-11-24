@@ -12,9 +12,9 @@
 #define COAST pros::E_MOTOR_BRAKE_COAST
 #define BRAKE pros::E_MOTOR_BRAKE_BRAKE
 #define HOLD pros::E_MOTOR_BRAKE_HOLD
-//TODO: SET TO PORT!!!!
-#define ELEVATOR_RIGHT 0
-#define ELEVATOR_LEFT 0
+
+#define ELEVATOR_RIGHT 0 //TODO: SET TO PORT!!!!
+#define ELEVATOR_LEFT 0 //TODO: SET TO PORT!!!!
 // WHEEL SIZES
 #define SIZE_2 2
 #define SIZE_275 2.75
@@ -38,8 +38,7 @@
 // #define HORIZONTAL_DISPLACEMENT 0.00
 
 // SUBSYSTEMS
-//TODO: SET PORT!!!!
-#define INTAKE_MOTOR1_PORT 0
+#define INTAKE_MOTOR1_PORT 0 //TODO: SET PORT!!!!
 
 extern bool isIntakeActive;
 
