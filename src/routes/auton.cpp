@@ -14,7 +14,6 @@ void auton_l(){
     pros::delay(100);
     descore.set_value(false);
     intakemotors.moveForward(127);
-    intakemotors.trapdoor_pos(0);
     // go to blocks in middle
     chassis.moveToPoint(-24, 24, 1050, {.maxSpeed = 80});
     pros::delay(600);
@@ -30,10 +29,8 @@ void auton_l(){
     match_loader.set_value(true);
     // score in long goal
     intakemotors.moveForward(127);
-    intakemotors.trapdoor_pos(0);
     chassis.moveToPoint(-23, 46.5, 3000, {.forwards=false, .minSpeed = 80});
     pros::delay(400);
-    intakemotors.trapdoor_pos(2);
     match_loader.set_value(false);
     // funny alignment for setting up wing push
     chassis.turnToHeading(330, 500);
@@ -51,7 +48,6 @@ void auton_r(){
     pros::delay(100);
     descore.set_value(false);
     intakemotors.moveForward(127);
-    intakemotors.trapdoor_pos(0);
     // go to blocks in middle
     chassis.moveToPoint(-24, -24, 1050, {.maxSpeed = 80});
     pros::delay(500);
@@ -67,10 +63,8 @@ void auton_r(){
     match_loader.set_value(true);
     // score in long goal
     intakemotors.moveForward(127);
-    intakemotors.trapdoor_pos(0);
     chassis.moveToPoint(-24, -46, 3000, {.forwards=false, .minSpeed = 80});
     pros::delay(400);
-    intakemotors.trapdoor_pos(2);
     // funny alignment for setting up wing push
     chassis.turnToHeading(330, 1000);
     chassis.moveToPoint(-33, -35, 1000, {.maxSpeed = 120});
@@ -100,7 +94,6 @@ void sawp(){
     pros::delay(100);
     descore.set_value(false);
     intakemotors.moveForward(127);
-    intakemotors.trapdoor_pos(0);
     // go to blocks in middle
     chassis.moveToPoint(-24, -24, 1050, {.maxSpeed = 80});
     pros::delay(550);
@@ -116,12 +109,9 @@ void sawp(){
     match_loader.set_value(true);
     // score in long goal
     intakemotors.moveForward(127);
-    intakemotors.trapdoor_pos(0);
     chassis.moveToPoint(-24, -47, 2400, {.forwards=false, .minSpeed = 80});
     pros::delay(400);
-    intakemotors.trapdoor_pos(2);
     pros::delay(1700);
-    intakemotors.trapdoor_pos(0);
     //Turn to face heading 0;
     chassis.turnToHeading(0, 500, {.minSpeed = 127});
     chassis.setPose(-25.34, -41.42, chassis.getPose().theta);
@@ -136,11 +126,8 @@ void sawp(){
     intakemotors.moveForward(127);
     chassis.moveToPoint(-9, 9, 1600, {.forwards = false, .maxSpeed = 120});
     pros::delay(900);
-    intakemotors.trapdoor_pos(1);
     pros::delay(800);
-    intakemotors.trapdoor_pos(2);
     pros::delay(100);
-    intakemotors.trapdoor_pos(0);
     pros::delay(10);
     //Continue remaining of Left Rush Auton
     // go to in between long goal and loader
@@ -155,10 +142,8 @@ void sawp(){
     chassis.moveToPoint(-67, 49.5, 1350,{.maxSpeed = 70},false);
     // score in long goal
     intakemotors.moveForward(127);
-    intakemotors.trapdoor_pos(0);
     chassis.moveToPoint(-24, 47.75, 3000, {.forwards=false, .maxSpeed = 100});
     pros::delay(500);
-    intakemotors.trapdoor_pos(2);
     match_loader.set_value(false);
 }
 
@@ -169,19 +154,15 @@ void sawp(){
 void skills() {
   chassis.setPose(-48.68, 17.50, 90);
   descore.set_value(true);
-  intakemotors.trapdoor_pos(0);
   intakemotors.moveForward(127);
   
   // MIDDLE 2 BLOCKS
   // grab block from middle and score two red in high middle goal
   chassis.moveToPoint(-32.29, 20.675, 5000);
   chassis.moveToPoint(-11, 12, 5000,{.forwards=false},false);
-  intakemotors.trapdoor_pos(1);
   pros::delay(500);
-  intakemotors.trapdoor_pos(2);
   intakemotors.moveForward(127);
   pros::delay(100);
-  intakemotors.trapdoor_pos(0);
   chassis.setPose(-9, 9, chassis.getPose().theta);
 
   // LONG GOAL 1
@@ -206,29 +187,24 @@ void skills() {
   chassis.turnToPoint(27, 48, 1000, {.forwards=false});
   chassis.moveToPoint(26, 48, 5000, {.forwards=false});
   pros::delay(1000);
-  intakemotors.trapdoor_pos(2);
   intakemotors.moveBackward(120);
   pros::delay(100);
   intakemotors.moveForward(127);
   pros::delay(2200);
-  intakemotors.trapdoor_pos(0);
   // go to loader
   intakemotors.moveForward(127); // random moveforward command to prevent intake stopping
   chassis.moveToPoint(63, 48, 4000,{.maxSpeed = 70},false);
   // score on long goal again
   chassis.moveToPoint(26, 48.5, 5000,{.forwards=false,.maxSpeed=70},false);
-  intakemotors.trapdoor_pos(2);
   pros::delay(2100);
   
   chassis.setPose(28.1, 48, 90); // for testing leave it here but during skills delete
-  intakemotors.trapdoor_pos(0);
   match_loader.set_value(false);
 
   // BLUE PARK ZONE CLEAR
   chassis.moveToPoint(53, 30, 1000, {.minSpeed = 127, .earlyExitRange = 1.0});
   chassis.turnToHeading(167, 500, {.earlyExitRange = 1.0});
   intakemotors.moveForward(127); 
-  intakemotors.trapdoor_pos(0);
   // go through front and get blocks out of zone
   chassis.moveToPoint(60, -18, 6000, {.minSpeed = 127});
   pros::delay(650);
@@ -249,15 +225,12 @@ void skills() {
   chassis.moveToPoint(13, -8, 7000,{.forwards=false});
   pros::delay(1000);
   chassis.turnToHeading(130, 500);
-  intakemotors.trapdoor_pos(1);
   pros::delay(2000);
-  intakemotors.trapdoor_pos(0);
 
   //Reset 
   chassis.setPose(11, -11, 135);
   pros::delay(100);
   match_loader.set_value(true);
-  intakemotors.trapdoor_pos(0);
   intakemotors.moveForward(127);
   // LONG GOAL 2
   // go to loader
@@ -277,18 +250,14 @@ void skills() {
   chassis.turnToPoint(-25, -49.5, 5000,{.forwards=false},false);
   chassis.moveToPoint(-25, -49.5, 5000,{.forwards=false},false);
   intakemotors.moveForward(127);
-  intakemotors.trapdoor_pos(2);
   pros::delay(2500);
-  intakemotors.trapdoor_pos(0);
   match_loader.set_value(true);
   // go to loader
   intakemotors.moveForward(127); // random moveforward command to prevent intake stopping
   chassis.moveToPoint(-60, -49.5, 3500,{.maxSpeed = 70},false);
   // score on long goal again
   chassis.moveToPoint(-25, -49.5, 5000,{.forwards=false},false);
-  intakemotors.trapdoor_pos(2);
   pros::delay(1500);
-  intakemotors.trapdoor_pos(0);
   pros::delay(2000);
   match_loader.set_value(false);
   //Reset Odom
@@ -298,7 +267,6 @@ void skills() {
   chassis.moveToPoint(-53, -30, 1000, {.minSpeed = 127, .earlyExitRange = 1.0});
   chassis.turnToHeading(345, 500, {.earlyExitRange = 1.0});
   intakemotors.moveForward(127); 
-  intakemotors.trapdoor_pos(0);
   // go through front and get blocks out of zone
   chassis.moveToPoint(-65, 0, 6000, {.minSpeed = 127});
   pros::delay(650);
