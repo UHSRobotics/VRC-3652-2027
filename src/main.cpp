@@ -119,6 +119,10 @@ void opcontrol() {
 			m_elevator.elevator_movement(false, false);
 			switch_elevator_up = false;
 		}
+		else
+		{
+			switch_elevator_up = false;
+		}
 		m_elevator.elevator_movement(controller.get_digital(DIGITAL_UP), controller.get_digital(DIGITAL_DOWN));
 
 		pros::delay(20);
