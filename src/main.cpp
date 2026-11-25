@@ -132,3 +132,19 @@ void opcontrol() {
 		pros::delay(25);
 	}
 }
+void elevatormove (bool direction){
+	if (direction == true) {
+		elevatorMotors.move(127);
+	} 
+	if (direction == false) {
+		elevatorMotors.move(-127);
+	}
+}
+void elevatorSensor(){
+	if(top_elevator_sensor.get_value()){
+		elevatorMotors.move(0);
+	}
+	if(bottom_elevator_sensor.get_value()){
+		elevatorMotors.move(0);
+	}
+}
