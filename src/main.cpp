@@ -99,6 +99,10 @@ void autonomous() {
 
 void opcontrol() {
 	pros::lcd::initialize();
+
+	top_sensor.calibrate();
+	bottom_sensor.calibrate();
+
 	// loop forever
 	while (true) {
 		// print robot location to the brain screen
@@ -131,5 +135,11 @@ void opcontrol() {
 		pros::delay(25);
 
 		handleElevator();
+	}
+
+	void handleElevatorSenser() {
+		while ((top_sensor.get_value() || bottom_sensor.get_value()) < 4095) {
+			elevatorMotors.move(0);
+		}
 	}
 }

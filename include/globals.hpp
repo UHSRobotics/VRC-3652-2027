@@ -81,6 +81,13 @@ extern bool descore_state;
 #define ANALOG_LEFT_Y pros::E_CONTROLLER_ANALOG_LEFT_Y
 #define ANALOG_RIGHT_X pros::E_CONTROLLER_ANALOG_RIGHT_X
 
+// TODO elevator sensors
+#define TOP_ANALOG_SENSOR_THRESHOLD 0
+#define BOTTOM_ANALOG_SENSOR_THRESHOLD 0
+
+extern pros::ADIAnalogIn top_sensor;
+extern pros::ADIAnalogIn bottom_sensor;
+
 
 // CHASSIS DEVICES
 extern pros::Motor leftFrontMotor;

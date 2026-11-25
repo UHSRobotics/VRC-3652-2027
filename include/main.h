@@ -68,6 +68,7 @@ void disabled(void);
 void competition_initialize(void);
 void opcontrol(void);
 void handleElevator(void);
+void handleElevatorSenser(void);
 #ifdef __cplusplus
 }
 #endif

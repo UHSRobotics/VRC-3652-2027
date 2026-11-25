@@ -19,6 +19,9 @@ pros::Motor rightBackMotor(RIGHT_BACK_MOTOR_PORT, BLUE);
 pros::Motor elevatorMotor0(ELEVATOR_MOTOR0, BLUE);
 pros::Motor elevatorMotor1(ELEVATOR_MOTOR1, BLUE);
 
+pros::ADIAnalogIn top_sensor (TOP_ANALOG_SENSOR_THRESHOLD);
+pros::ADIAnalogIn bottom_sensor (BOTTOM_ANALOG_SENSOR_THRESHOLD);
+
 // !TODO MOTOR GROUP GOES HERE
 // pros::Motor_Group leftMotors({leftFrontMotor, leftMiddleMotor, leftBackMotor});
 // pros::Motor_Group rightMotors({rightFrontMotor, rightMiddleMotor, rightBackMotor});
