@@ -94,3 +94,7 @@ lemlib::Chassis chassis(drivetrain, // drivetrain settings
                         odomSensors // odometry
 );
 
+
+void initialize() {
+    pros::ADIDigitalIn sensor{'A'};
+}

@@ -2,6 +2,7 @@
 
 #include "api.h"
 #include "lemlib/api.hpp"
+#include "pros/adi.hpp"
 
 // GEARSET
 #define RED pros::E_MOTOR_GEAR_RED
@@ -45,6 +46,11 @@ extern bool isIntakeActive;
 // SENSORS
 #define INERTIAL 6
 #define VERTICAL_ROTATION 10
+
+// ELEVATOR SENSORS
+
+#define ELEVATOR_TOP_SENSOR 'C'
+#define ELEVATOR_BOTTOM_SENSOR 'D'
 
 // PNEUMATICS
 #define TRAPDOOR_B 'H'
@@ -108,6 +114,8 @@ extern pros::ADIDigitalOut trapdoor_b;
 extern pros::ADIDigitalOut trapdoor_m;
 extern pros::ADIDigitalOut match_loader;
 extern pros::ADIDigitalOut descore;
+extern pros::ADIDigitalIn elevatorTopSensor;
+extern pros::ADIDigitalIn elevatorBottomSensor;
 
 // CONTROLLER DEVICES
 extern pros::Controller controller;

@@ -111,6 +111,11 @@ void opcontrol() {
 		// pros::lcd::print(4, "RR: %f", horizontalRotation.get_position());
 		// delay to save resources
 		m_elevator.elevator_movement(controller.get_digital(DIGITAL_UP));
+		
+		if (elevatorTopSensor.get_value() || elevatorBottomSensor.get_value()){
+			elevator.move_velocity(0);
+		}
+
 		pros::delay(20);
 
 		// Run driver control based on mode selected
