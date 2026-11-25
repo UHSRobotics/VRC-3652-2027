@@ -3,13 +3,16 @@
 
 Elevator::Elevator() {}
 
-void Elevator::elevator_movement(bool UP){
+void Elevator::elevator_movement(bool UP, bool DOWN){
     if (UP)
     {
         elevator.move_velocity(127);
     }
-    else
+    else if (DOWN)
     {
         elevator.move_velocity(-127);
+    }
+    else{
+        elevator.move_velocity(0);
     }
 }

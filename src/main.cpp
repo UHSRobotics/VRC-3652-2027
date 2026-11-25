@@ -110,7 +110,17 @@ void opcontrol() {
 		// pros::lcd::print(3, "LR: %f", verticalRotation.get_position());
 		// pros::lcd::print(4, "RR: %f", horizontalRotation.get_position());
 		// delay to save resources
-		m_elevator.elevator_movement(controller.get_digital(DIGITAL_UP));
+		if (sensor_elevator_up.get_value())
+		{
+			m_elevator.elevator_movement(false, false);
+			switch_elevator_up = true;
+		}
+		else if (sensor_elevator_down.get_value()){
+			m_elevator.elevator_movement(false, false);
+			switch_elevator_up = false;
+		}
+		m_elevator.elevator_movement(controller.get_digital(DIGITAL_UP), controller.get_digital(DIGITAL_DOWN));
+
 		pros::delay(20);
 
 		// Run driver control based on mode selected
