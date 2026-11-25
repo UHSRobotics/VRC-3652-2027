@@ -36,7 +36,12 @@ pros::Motor intakeMotor(INTAKE_MOTOR1_PORT, BLUE);
 //pros::Optical optical(VERTICAL_ROTATION);
 pros::Imu inertial(INERTIAL);
 pros::Rotation verticalRotation(VERTICAL_ROTATION, true);
+
 // pros::Rotation horizontalRotation(HORIZONTAL_ROTATION);
+
+//Elevator sensors
+pros::ADIDigitalIn elevatorTopSensor (ELEVATOR_TOP_SENSOR);
+pros::ADIDigitalIn elevatorBottomSensor (ELEVATOR_BOTTOM_SENSOR);
 
 // PNEUMATICS
 pros::ADIDigitalOut trapdoor_b(TRAPDOOR_B);

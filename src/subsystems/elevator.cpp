@@ -4,11 +4,14 @@
 Elevator::Elevator() {}
 
 void Elevator::elevator_movement(bool UP){
-    if (UP)
-    {
-        elevator.move_velocity(127);
+    if (elevatorTopSensor.get_value() || elevatorBottomSensor.get_value()){
+        elevator.move_velocity(0);
     }
-    else
+	else if (UP)
+	{
+		elevator.move_velocity(127);
+	}
+	else
     {
         elevator.move_velocity(-127);
     }

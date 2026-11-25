@@ -46,6 +46,11 @@ extern bool isIntakeActive;
 #define INERTIAL 6
 #define VERTICAL_ROTATION 10
 
+// Elevator sensors
+#define ELEVATOR_TOP_SENSOR 'C'
+#define ELEVATOR_BOTTOM_SENSOR 'D'
+
+
 // PNEUMATICS
 #define TRAPDOOR_B 'H'
 #define TRAPDOOR_M 'G'
@@ -58,6 +63,8 @@ extern bool trapdoorb_state;
 extern bool trapdoorm_state;
 extern bool loader_state;
 extern bool descore_state;
+extern pros::ADIDigitalIn elevatorTopSensor;
+extern pros::ADIDigitalIn elevatorBottomSensor;
 
 // CONTROLLER
 #define CONTROLLER pros::E_CONTROLLER_MASTER
