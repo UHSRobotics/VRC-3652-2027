@@ -98,6 +98,8 @@ void autonomous() {
  */
 
 void opcontrol() {
+    pros::Motor ClawMtr(8);
+    ClawMtr.set_brake_mode(pros::E_MOTOR_BRAKE_HOLD);
 	pros::lcd::initialize();
 	// loop forever
 	while (true) {
@@ -120,11 +122,22 @@ void opcontrol() {
 			switch_elevator_up = false;
 		}
 		else
-		{
-			switch_elevator_up = false;
-		}
-		m_elevator.elevator_movement(controller.get_digital(DIGITAL_UP), controller.get_digital(DIGITAL_DOWN));
+    {
+        switch_elevator_up = false;
+    }
+    m_elevator.elevator_movement(controller.get_digital(DIGITAL_UP), controller.get_digital(DIGITAL_DOWN));
 
+    int current_pwr = 0;
+
+    if (controller.get_digital(DIGITAL_L1)) {
+        current_pwr = 127;
+    } else if (controller.get_digital(DIGITAL_L2)) {
+        current_pwr = -127;
+    } else {
+        current_pwr = 0;
+    }
+
+    ClawMtr.move(current_pwr);
 		pros::delay(20);
 
 		// Run driver control based on mode selected
@@ -135,7 +148,7 @@ void opcontrol() {
 		wing_descore.run(DIGITAL_L2);
 		
 		// armM.controlByAmount(DIGITAL_B, customArmMove, armVelocity);
-
+el
 		intake.holdControl(controller.get_digital(DIGITAL_R1), controller.get_digital(DIGITAL_R2));
 
 		// Run color sorter
