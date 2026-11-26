@@ -11,11 +11,11 @@ class Claw {
             clawMotor.move_velocity(-127);
         }
 
-        void tick() {
-            if (controller.get_digital(DIGITAL_R2)) {
+        void tick(bool catchButton, bool openButton) {
+            if (catchButton) {
                 catches();
             } else
-            if (controller.get_digital(DIGITAL_R1)) {
+            if (openButton) {
                 open();
             } else {
                 clawMotor.move_velocity(0);

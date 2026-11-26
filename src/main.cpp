@@ -127,7 +127,7 @@ void opcontrol() {
 		}
 		m_elevator.elevator_movement(controller.get_digital(DIGITAL_UP), controller.get_digital(DIGITAL_DOWN));
 
-		Claw.tick();
+		Claw.tick(DIGITAL_R2, DIGITAL_R1);
 
 		pros::delay(20);
 
