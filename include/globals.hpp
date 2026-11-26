@@ -30,6 +30,7 @@
 #define RIGHT_BACK_MOTOR_PORT 3
 #define ANALOG_SENSOR_PORT_ELEVATOR_UP 0 //TODO: SET PORT!!!
 #define ANALOG_SENSOR_PORT_ELEVATOR_DOWN 0 //TODO: SET PORT!!!
+#define CLAW_PORT 0 // TODO: SET CLAW PORT
 // CHASSIS VALUES
 #define RPM 450
 #define TRACK_WIDTH 11.5
@@ -111,6 +112,8 @@ extern pros::ADIDigitalOut trapdoor_b;
 extern pros::ADIDigitalOut trapdoor_m;
 extern pros::ADIDigitalOut match_loader;
 extern pros::ADIDigitalOut descore;
+
+extern pros::Motor clawMotor;
 
 // CONTROLLER DEVICES
 extern pros::Controller controller;
