@@ -34,6 +34,9 @@ pros::Motor elevator_left(ELEVATOR_LEFT, BLUE);
 pros::Motor_Group elevator({elevator_right, elevator_left});
 // SUBSYSTEMS
 pros::Motor intakeMotor(INTAKE_MOTOR1_PORT, BLUE);
+
+pros::Motor clawMotor(CLAW_PORT, BLUE);
+// TODO CLAW MOTOR GOES HERE
 // SENSORS
 //pros::Optical optical(VERTICAL_ROTATION);
 pros::Imu inertial(INERTIAL);
