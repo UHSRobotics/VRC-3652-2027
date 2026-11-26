@@ -40,7 +40,7 @@
 
 // SUBSYSTEMS
 #define INTAKE_MOTOR1_PORT 0 //TODO: SET PORT!!!!
-
+#define CLAW_MOTOR_PORT5 5 
 extern bool isIntakeActive;
 
 // SENSORS
@@ -100,6 +100,7 @@ extern pros::ADIAnalogIn sensor_elevator_up;
 extern pros::ADIAnalogIn sensor_elevator_down;
 // SUBSYSTEMS DEVICES
 extern pros::Motor intakeMotor;
+extern pros::Motor clawMotor;
 // SENSOR DEVICES
 // extern pros::Optical optical;
 extern pros::Imu inertial;
