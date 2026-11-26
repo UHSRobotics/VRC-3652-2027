@@ -28,7 +28,8 @@
 #define RIGHT_FRONT_MOTOR_PORT -1
 // #define RIGHT_MIDDLE_MOTOR_PORT 2
 #define RIGHT_BACK_MOTOR_PORT 3
-
+#define ANALOG_SENSOR_PORT_ELEVATOR_UP 0 //TODO: SET PORT!!!
+#define ANALOG_SENSOR_PORT_ELEVATOR_DOWN 0 //TODO: SET PORT!!!
 // CHASSIS VALUES
 #define RPM 450
 #define TRACK_WIDTH 11.5
@@ -58,6 +59,7 @@ extern bool trapdoorb_state;
 extern bool trapdoorm_state;
 extern bool loader_state;
 extern bool descore_state;
+extern bool switch_elevator_up;
 
 // CONTROLLER
 #define CONTROLLER pros::E_CONTROLLER_MASTER
@@ -94,7 +96,8 @@ extern pros::Motor elevator_left;
 extern pros::Motor_Group elevator;
 extern pros::Motor_Group leftMotors;
 extern pros::Motor_Group rightMotors;
-
+extern pros::ADIAnalogIn sensor_elevator_up;
+extern pros::ADIAnalogIn sensor_elevator_down;
 // SUBSYSTEMS DEVICES
 extern pros::Motor intakeMotor;
 // SENSOR DEVICES

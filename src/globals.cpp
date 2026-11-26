@@ -7,6 +7,7 @@ bool trapdoorb_state = false;
 bool trapdoorm_state = false;
 bool loader_state = false;
 bool descore_state = false;
+bool switch_elevator_up = false;
 
 // CHASSIS
 pros::Motor leftFrontMotor(LEFT_FRONT_MOTOR_PORT, BLUE);
@@ -19,7 +20,8 @@ pros::Motor rightBackMotor(RIGHT_BACK_MOTOR_PORT, BLUE);
 // !TODO MOTOR GROUP GOES HERE
 // pros::Motor_Group leftMotors({leftFrontMotor, leftMiddleMotor, leftBackMotor});
 // pros::Motor_Group rightMotors({rightFrontMotor, rightMiddleMotor, rightBackMotor});
-
+pros::ADIAnalogIn sensor_elevator_up(ANALOG_SENSOR_PORT_ELEVATOR_UP);
+pros::ADIAnalogIn sensor_elevator_down(ANALOG_SENSOR_PORT_ELEVATOR_DOWN);
 pros::Motor_Group leftMotors({leftFrontMotor, leftBackMotor});
 pros::Motor_Group rightMotors({rightFrontMotor, rightBackMotor});
 // pros::Motor leftMotor(LEFT_MOTOR_PORT, BLUE);
