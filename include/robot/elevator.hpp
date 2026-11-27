@@ -1,5 +1,9 @@
 class Elevator {
   public:
     Elevator();
-    void elevator_movement(bool UP, bool DOWN);
+    void elevator_movement(float change, float speed);
+
+  private:
+      float setpoint;
+      float previous_change;
 };

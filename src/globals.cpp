@@ -1,13 +1,17 @@
 #include "../include/globals.hpp"
 
 // Global Variables
+double margin_of_error = 0.02;
+double height_conversion_factor = 28.8; //TODO: SET THE HEIGH CONVERSION FACTOR TO CONVERT TO HEIGHT!
 int intake_state = 0;
+int elevator_rotation_max_setpoint = 53; //TODO: SET TO ACCURATE PHYSICAL MEASURE
+int elevator_rotation_min_setpoint = -5; //TODO: SET TO ACCURATE PHYSICAL MEASURE
 bool isIntakeActive = false;
 bool trapdoorb_state = false;
 bool trapdoorm_state = false;
 bool loader_state = false;
 bool descore_state = false;
-bool switch_elevator_up = false;
+// bool switch_elevator_up = false;
 
 // CHASSIS
 pros::Motor leftFrontMotor(LEFT_FRONT_MOTOR_PORT, BLUE);
@@ -20,8 +24,9 @@ pros::Motor rightBackMotor(RIGHT_BACK_MOTOR_PORT, BLUE);
 // !TODO MOTOR GROUP GOES HERE
 // pros::Motor_Group leftMotors({leftFrontMotor, leftMiddleMotor, leftBackMotor});
 // pros::Motor_Group rightMotors({rightFrontMotor, rightMiddleMotor, rightBackMotor});
-pros::ADIAnalogIn sensor_elevator_up(ANALOG_SENSOR_PORT_ELEVATOR_UP);
-pros::ADIAnalogIn sensor_elevator_down(ANALOG_SENSOR_PORT_ELEVATOR_DOWN);
+// pros::ADIAnalogIn sensor_elevator_up(ANALOG_SENSOR_PORT_ELEVATOR_UP);
+// pros::ADIAnalogIn sensor_elevator_down(ANALOG_SENSOR_PORT_ELEVATOR_DOWN);
+pros::Rotation rotation_sensor(ROTATION_PORT);
 pros::Motor_Group leftMotors({leftFrontMotor, leftBackMotor});
 pros::Motor_Group rightMotors({rightFrontMotor, rightBackMotor});
 // pros::Motor leftMotor(LEFT_MOTOR_PORT, BLUE);
