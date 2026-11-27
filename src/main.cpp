@@ -99,7 +99,8 @@ void autonomous() {
 
 void opcontrol() {
 	pros::lcd::initialize();
-	double change = 1.1;
+	double change = 0;
+	double speed = 0;
 	// loop forever
 	while (true) {
 		// print robot location to the brain screen
@@ -112,15 +113,42 @@ void opcontrol() {
 		// pros::lcd::print(4, "RR: %f", horizontalRotation.get_position());
 		// delay to save resources
 		
-		if (controller.get_digital(DIGITAL_UP)){
-			change = change**2;
-			m_elevator.elevator_movement(change);
+		if (controller.get_digital(DIGITAL_UP) && controller.get_digital(DIGITAL_DOWN)){
+			change = 0;
+			speed = 0;
 		}
-		else if (controller.get_digital(DIGITAL_DOWN)){
-			change = change**2;
-			m_elevator.elevator_movement(-change);
+		else if (controller.get_digital(DIGITAL_UP))
+		{
+			if (change <= 0){
+				speed = 30;
+			}
+			else{
+				speed = speed + 2;
+			}
+
+			change = 1.1;
 		}
-		change = 1.1;
+		else if (controller.get_digital(DIGITAL_DOWN))
+		{
+			if (change >= 0){
+				speed = 30;
+			}
+			else{
+				speed = speed + 2;
+			}
+
+			change = -1.1;
+		}
+		else{
+			change = 0;
+			speed = 0;
+		}
+
+		if (speed > 100){
+			speed = 100;
+		}
+
+		m_elevator.elevator_movement(change, speed);
 		pros::delay(20);
 
 		// Run driver control based on mode selected
